@@ -1,0 +1,613 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap');
+
+:root {
+    --deep-sea: #0A2233;
+    --deep-sea-2: #123244;
+    --tide-teal: #1C6E71;
+    --tide-teal-light: #3E9498;
+    --dawn-amber: #E3A23E;
+    --foam: #F5F8F7;
+    --ink: #16232B;
+    --ink-soft: #4E5F66;
+    --net-brown: #8B6A45;
+    --line: #E1E8E7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0;
+    background-color: var(--foam);
+}
+
+h1,
+h2,
+h3,
+.display {
+    font-family: 'Zilla Slab', Georgia, serif;
+    letter-spacing: -0.01em;
+}
+
+.mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Layout — .container is the article-width default (780px).
+   Add .container-wide on pages that want the fuller homepage width (920px). */
+.container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.container.container-wide {
+    max-width: 920px;
+}
+
+/* Header */
+header {
+    padding: 22px 0;
+    background: var(--foam);
+    border-bottom: 1px solid var(--line);
+}
+
+.logo {
+    font-family: 'Zilla Slab', serif;
+    font-size: 22px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--deep-sea);
+    letter-spacing: -0.02em;
+}
+
+.logo span {
+    color: var(--tide-teal);
+}
+
+/* Hero — the big homepage banner */
+.hero {
+    position: relative;
+    min-height: 440px;
+    display: flex;
+    align-items: flex-end;
+    background: var(--deep-sea);
+    color: #fff;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.55;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 34, 51, 0.15) 0%, rgba(10, 34, 51, 0.55) 55%, rgba(10, 34, 51, 0.92) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 640px;
+    padding: 60px 0 44px 0;
+}
+
+.hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dawn-amber);
+    margin: 0 0 14px 0;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 46px);
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    line-height: 1.08;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.92;
+    margin: 0;
+    max-width: 540px;
+}
+
+/* Page hero — shorter banner for article/guide pages */
+.page-hero {
+    position: relative;
+    min-height: 280px;
+    display: flex;
+    align-items: flex-end;
+    background: var(--deep-sea);
+    color: #fff;
+    overflow: hidden;
+}
+
+.page-hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 34, 51, 0.1) 0%, rgba(10, 34, 51, 0.6) 60%, rgba(10, 34, 51, 0.94) 100%);
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px 0 30px 0;
+}
+
+.back-link {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    margin-bottom: 14px;
+    letter-spacing: 0.02em;
+}
+
+.back-link:hover {
+    color: #fff;
+}
+
+.page-hero h1 {
+    font-size: clamp(28px, 4.5vw, 38px);
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    line-height: 1.12;
+}
+
+.page-hero p {
+    font-size: 16.5px;
+    opacity: 0.9;
+    margin: 0;
+    max-width: 560px;
+}
+
+/* Article wrapper (article-type pages) */
+article {
+    padding: 44px 0 8px 0;
+}
+
+/* SEO / lede intro, used on every page */
+.intro {
+    margin-top: 44px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 28px;
+}
+
+.intro p {
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin: 0 0 8px 0;
+}
+
+.intro p:last-child {
+    margin-bottom: 0;
+}
+
+.intro strong {
+    color: var(--ink);
+}
+
+/* Table of contents box (article pages) */
+.toc {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--ink-soft);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 28px 0 44px 0;
+}
+
+.toc-label {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 11px;
+    color: var(--tide-teal);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.toc ol {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.toc li {
+    margin-bottom: 4px;
+}
+
+.toc a {
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.toc a:hover {
+    color: var(--tide-teal);
+}
+
+/* Section title (homepage guide grid heading) */
+.section-title {
+    margin: 52px 0 26px 0;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--deep-sea);
+    border-left: 4px solid var(--tide-teal);
+    padding-left: 15px;
+}
+
+/* Post cards (homepage guide grid) */
+.post-card {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 24px;
+    text-decoration: none;
+    color: inherit;
+    padding: 18px;
+    margin-bottom: 18px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    transition: all 0.25s ease;
+    align-items: center;
+    background: #fff;
+}
+
+.post-card:hover {
+    border-color: var(--tide-teal);
+    box-shadow: 0 10px 30px rgba(10, 34, 51, 0.07);
+    transform: translateY(-3px);
+}
+
+.post-thumb {
+    width: 180px;
+    height: 128px;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.post-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--tide-teal);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.post-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--deep-sea);
+}
+
+.post-card p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    line-height: 1.55;
+}
+
+/* Deep-dive card (homepage) */
+.deep-dive {
+    background: #fff;
+    padding: 42px;
+    border-radius: 18px;
+    margin-top: 44px;
+    border: 1px solid var(--line);
+}
+
+.deep-dive h2 {
+    color: var(--deep-sea);
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.deep-dive p {
+    color: var(--ink-soft);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.deep-dive h3 {
+    color: var(--tide-teal);
+    font-size: 18px;
+    font-weight: 600;
+    margin: 26px 0 8px 0;
+}
+
+.deep-dive ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.deep-dive ul li {
+    position: relative;
+    padding: 10px 0 10px 20px;
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    line-height: 1.6;
+    border-bottom: 1px solid var(--line);
+}
+
+.deep-dive ul li:last-child {
+    border-bottom: none;
+}
+
+.deep-dive ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 18px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--tide-teal);
+}
+
+.deep-dive ul li strong {
+    color: var(--ink);
+}
+
+.deep-dive .tip {
+    font-style: italic;
+    color: var(--ink-soft);
+    border-left: 3px solid var(--dawn-amber);
+    padding-left: 16px;
+    margin-top: 22px;
+}
+
+/* Per-lake sections (article pages) */
+.lake-section {
+    padding-top: 36px;
+    margin-top: 36px;
+    border-top: 1px solid var(--line);
+}
+
+.lake-section:first-of-type {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.lake-rank {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--dawn-amber);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.lake-section h2 {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--deep-sea);
+    margin: 0 0 4px 0;
+}
+
+.lake-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--tide-teal);
+    margin: 0 0 18px 0;
+    letter-spacing: 0.01em;
+}
+
+.lake-section h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    margin: 20px 0 8px 0;
+}
+
+.lake-section p {
+    color: var(--ink-soft);
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0 0 4px 0;
+}
+
+.lake-section strong {
+    color: var(--ink);
+}
+
+/* Small highlighted box, e.g. best-season callouts (article pages) */
+.season-box {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--dawn-amber);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 12px 0 4px 0;
+}
+
+.season-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--net-brown);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.season-box p {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* App note — the one small, honest app mention, same on every page */
+.app-note {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--tide-teal);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin: 44px 0 12px 0;
+}
+
+.app-note-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--tide-teal);
+    margin: 0 0 4px 0;
+}
+
+.app-note h3 {
+    margin: 0 0 8px 0;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--deep-sea);
+    font-family: 'Zilla Slab', serif;
+    text-transform: none;
+    letter-spacing: -0.01em;
+}
+
+.app-note p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    line-height: 1.6;
+}
+
+.app-note a {
+    color: var(--tide-teal);
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.app-note a:hover {
+    text-decoration: underline;
+}
+
+/* Related-guides link list (article pages) */
+.related {
+    margin: 40px 0 8px 0;
+}
+
+.related-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+
+.related ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.related li {
+    border-bottom: 1px solid var(--line);
+}
+
+.related li:last-child {
+    border-bottom: none;
+}
+
+.related a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 2px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.related a:hover {
+    color: var(--tide-teal);
+}
+
+.related a span.arrow {
+    color: var(--tide-teal);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+}
+
+/* Footer */
+footer {
+    padding: 54px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #7C8A8C;
+    background: var(--foam);
+    border-top: 1px solid var(--line);
+    margin-top: 44px;
+}
+
+footer .foot-brand {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    margin-top: 10px;
+    letter-spacing: 0.04em;
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+    .post-card {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .post-thumb {
+        width: 100%;
+        height: 170px;
+    }
+
+    .hero {
+        min-height: 360px;
+    }
+
+    .page-hero {
+        min-height: 240px;
+    }
+
+    .deep-dive {
+        padding: 28px 22px;
+    }
+}
