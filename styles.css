@@ -601,10 +601,14 @@ footer .foot-brand {
 
     .hero {
         min-height: 360px;
+        padding-right: 24px;
+        padding-left: 24px;
     }
 
     .page-hero {
         min-height: 240px;
+        padding-right: 24px;
+        padding-left: 24px;
     }
 
     .deep-dive {
