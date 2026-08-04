@@ -386,7 +386,8 @@ article {
     color: var(--ink);
 }
 
-.deep-dive .tip {
+/* Tip callout — usable standalone on any page, not just inside .deep-dive */
+.tip {
     font-style: italic;
     color: var(--ink-soft);
     border-left: 3px solid var(--dawn-amber);
@@ -394,14 +395,17 @@ article {
     margin-top: 22px;
 }
 
-/* Per-lake sections (article pages) */
-.lake-section {
+/* Per-lake sections (article pages) — .content-section is the generic name,
+   .lake-section is kept as an alias for the lakes page specifically. */
+.lake-section,
+.content-section {
     padding-top: 36px;
     margin-top: 36px;
     border-top: 1px solid var(--line);
 }
 
-.lake-section:first-of-type {
+.lake-section:first-of-type,
+.content-section:first-of-type {
     border-top: none;
     margin-top: 0;
     padding-top: 0;
@@ -417,7 +421,8 @@ article {
     margin-bottom: 6px;
 }
 
-.lake-section h2 {
+.lake-section h2,
+.content-section h2 {
     font-size: 25px;
     font-weight: 600;
     color: var(--deep-sea);
@@ -432,7 +437,8 @@ article {
     letter-spacing: 0.01em;
 }
 
-.lake-section h3 {
+.lake-section h3,
+.content-section h3 {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -442,19 +448,39 @@ article {
     margin: 20px 0 8px 0;
 }
 
-.lake-section p {
+.lake-section p,
+.content-section p {
     color: var(--ink-soft);
     font-size: 16px;
     line-height: 1.7;
     margin: 0 0 4px 0;
 }
 
-.lake-section strong {
+.lake-section strong,
+.content-section strong {
     color: var(--ink);
 }
 
-/* Small highlighted box, e.g. best-season callouts (article pages) */
-.season-box {
+.content-section ul {
+    margin: 8px 0 4px 0;
+    padding-left: 20px;
+    color: var(--ink-soft);
+}
+
+.content-section ul li {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+.content-section ul li strong {
+    color: var(--ink);
+}
+
+/* Small highlighted box, e.g. best-season callouts (article pages).
+   .info-box is the generic name; .season-box stays as an alias. */
+.season-box,
+.info-box {
     background: #fff;
     border: 1px solid var(--line);
     border-left: 3px solid var(--dawn-amber);
@@ -463,7 +489,8 @@ article {
     margin: 12px 0 4px 0;
 }
 
-.season-label {
+.season-label,
+.info-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     text-transform: uppercase;
@@ -473,9 +500,71 @@ article {
     margin-bottom: 6px;
 }
 
-.season-box p {
+.season-box p,
+.info-box p {
     margin: 0;
     font-size: 15px;
+}
+
+.info-box p+p {
+    margin-top: 8px;
+}
+
+/* Variant with a teal accent instead of amber, for "how it works" vs "the evidence" framing */
+.info-box.info-box--teal {
+    border-left-color: var(--tide-teal);
+}
+
+.info-box.info-box--teal .info-label {
+    color: var(--tide-teal);
+}
+
+/* Phrase box — groups several phrases into one bordered card, like a tip box.
+   Kept separate from .info-box so its own type rules don't collide with phrase styling. */
+.phrase-box {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--tide-teal);
+    border-radius: 8px;
+    padding: 4px 20px;
+    margin: 18px 0 20px 0;
+}
+
+.phrase-list {
+    margin: 0;
+}
+
+.phrase-item {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.phrase-item:last-child {
+    border-bottom: none;
+}
+
+.phrase-jp {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--deep-sea);
+    margin: 0 0 4px 0;
+}
+
+.phrase-romaji {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    font-weight: 400;
+    color: var(--tide-teal);
+    margin-top: 3px;
+    letter-spacing: 0.01em;
+}
+
+.phrase-meaning {
+    margin: 0;
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.6;
 }
 
 /* App note — the one small, honest app mention, same on every page */
