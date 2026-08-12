@@ -539,7 +539,8 @@ article {
     border-bottom: 1px solid var(--line);
 }
 
-.phrase-item:last-child {
+.phrase-item:last-child,
+.group-item:last-child {
     border-bottom: none;
 }
 
@@ -566,6 +567,62 @@ article {
     color: var(--ink-soft);
     line-height: 1.6;
 }
+
+.phrase-item,
+.group-item {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.group-box {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--tide-teal);
+    border-radius: 8px;
+    padding: 4px 20px;
+    margin: 18px 0 20px 0;
+}
+
+.phrase-list,
+.group-list {
+    margin: 0;
+}
+
+.item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+phrase-jp,
+.item-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--deep-sea);
+    margin: 0 0 4px 0;
+}
+
+.phrase-romaji,
+.item-tag {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    font-weight: 400;
+    color: var(--tide-teal);
+    margin-top: 3px;
+    letter-spacing: 0.01em;
+}
+
+.phrase-meaning,
+.item-desc {
+    margin: 0;
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+}
+
 
 /* App note — the one small, honest app mention, same on every page */
 .app-note {
