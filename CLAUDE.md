@@ -14,10 +14,11 @@ There is no build system, package manager, JavaScript, linter or test suite. Eve
 
 ## Page structure
 
-- **`index.html`** is the home page. It has a `.hero`, `.intro`, one `.post-card` per article, a `.deep-dive` summary section and an `.app-note`. It is the only page with JSON-LD (`WebSite` schema) and the `android-app://` alternate link.
+- **`index.html`** is the home page. It has a `.hero`, `.intro`, one `.post-card` per article, a `.deep-dive` summary section and an `.app-note`. Its JSON-LD uses the `WebSite` schema.
 - **Article pages** (`*-japan.html`, `*-fishing.html`, etc.) all use the same skeleton. When adding one, copy an existing article instead of starting from scratch:
-  - A `<head>` with `title` (`<Article Title> | My Japan Fishing`), `description`, `keywords`, `canonical`, Open Graph tags (`og:type` = `article`) and Twitter card tags. The OG/Twitter images reuse the hero's Unsplash URL at `w=1200`.
-  - `header` (logo links to `index.html`), then `.page-hero` with `.back-link`, `h1` and a subtitle.
+  - A `<head>` with `title`, `description`, `canonical`, Open Graph tags (`og:type` = `article`), Twitter card tags, the Google Fonts `<link>`, and a JSON-LD `@graph` containing an `Article` and a `BreadcrumbList`. The `Article` has `datePublished` and `dateModified`, so bump `dateModified` whenever you edit the content. The OG/Twitter images reuse the hero's Unsplash URL at `w=1200`.
+  - The `<title>` targets search queries (`<Keyword-led title> | My Japan Fishing`). The `h1`, `og:title` and card titles can keep the site's voice instead.
+  - `header` (the logo links to `/`), then `.page-hero` with `.back-link`, `h1` and a subtitle. The hero `<img>` has `fetchpriority="high"`. Other images get `loading="lazy"` plus `width`/`height` attributes.
   - `.container > article` holding `.intro`, then a `.toc` whose anchors match the `id`s on each `.content-section`, then the content sections, then `.app-note`, then `.related` ("Keep reading" links to the other articles).
   - The same `footer` on every page.
 - Reusable content components defined in `styles.css`: `.info-box` (plus the `.info-box--teal` variant) with `.info-label`, `.tip`, `.season-box`, `.lake-section`/`.lake-rank`/`.lake-meta`, `.phrase-box`/`.phrase-item` (`.phrase-jp`, `.phrase-romaji`, `.phrase-meaning`), and `.group-box`/`.group-item` (`.item-name`, `.item-tag`, `.item-desc`, `.item-image`).
@@ -25,15 +26,16 @@ There is no build system, package manager, JavaScript, linter or test suite. Eve
 ## Adding or renaming an article touches several files
 
 There are no templates or includes, so shared content is duplicated by hand:
-1. Create the page, and make its `canonical`/`og:url` match the actual filename.
+1. Create the page. Its `canonical`, `og:url` and JSON-LD URLs must match the filename on the apex domain `https://myjapanfishing.com/`. `www.` 301-redirects there, so never use it in URLs.
 2. Add a `.post-card` for it in `index.html`.
 3. Add it to the `.related` list on every other article page.
-4. Header, footer and `.app-note` changes must be repeated on every page.
+4. Add it to `sitemap.xml`, and update `<lastmod>` there whenever a page changes.
+5. Header, footer and `.app-note` changes must be repeated on every page.
 
 ## Styling
 
 - All styles live in `styles.css`. Colors are CSS custom properties on `:root` (`--deep-sea`, `--tide-teal`, `--dawn-amber`, `--foam`, `--ink`, `--ink-soft`, `--line`, …), so use those variables rather than hard-coded hex values.
-- Fonts come from a Google Fonts `@import` at the top of `styles.css`: Zilla Slab for display/headings, Inter for body text, and JetBrains Mono for small labels and eyebrows.
+- Fonts come from a Google Fonts `<link>` in each page's `<head>`. Don't use `@import` in the CSS, because it delays loading. The fonts are Zilla Slab for display/headings, Inter for body text, and JetBrains Mono for small labels and eyebrows.
 - There is one responsive breakpoint: `@media (max-width: 650px)`.
 
 ## Content conventions
