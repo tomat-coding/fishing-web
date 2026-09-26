@@ -10,6 +10,8 @@ There is no build system, package manager, JavaScript, linter or test suite. Eve
 
 `favicon.ico`, `favicon-16x16.png`, `favicon-32x32.png` and `logo.png` (the JSON-LD publisher logo) are resized copies of the app's Google Play icon. If the app icon changes, regenerate them.
 
+GitHub Pages builds the site with its default Jekyll step. Any file that belongs only in the repo, like this one, must be listed under `exclude` in `_config.yml`, or it gets published.
+
 `google99ec3fbe524bd037.html` is the Google Search Console verification file. Don't edit or remove it.
 
 ## Page structure

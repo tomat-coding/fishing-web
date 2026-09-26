@@ -1,0 +1,4 @@
+# GitHub Pages (Jekyll) build settings. Pages are plain HTML without front matter,
+# so Jekyll copies them as-is; this file only keeps repo-only files off the site.
+exclude:
+  - CLAUDE.md
