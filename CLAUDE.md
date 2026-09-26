@@ -23,6 +23,8 @@ GitHub Pages builds the site with its default Jekyll step. Any file that belongs
   - `header` (the logo links to `/`), then `.page-hero` with `.back-link`, `h1` and a subtitle. The hero `<img>` has `fetchpriority="high"`. Other images get `loading="lazy"` plus `width`/`height` attributes.
   - `.container > article` holding `.intro`, then a `.toc` whose anchors match the `id`s on each `.content-section`, then the content sections, then `.app-note`, then `.related` ("Keep reading" links to the other articles).
   - The same `footer` on every page.
+- **Lake guides** (`lake-<name>-fishing.html`, and `lake-suwa-wakasagi-fishing.html`) each cover one lake. `japans-lakes-for-fishing.html` is the hub that summarizes all six and links to each guide. Their breadcrumb JSON-LD goes Home → The Six Lakes We Cover → the lake guide. When a fact about a lake changes, update the guide, the hub section, the lake's section in `lake-fishing-license-japan.html`, and the `index.html` deep-dive together, because they repeat each other.
+- `.related` ("Keep reading") lists are curated to about five of the most relevant pages. They don't list every article.
 - Reusable content components defined in `styles.css`: `.info-box` (plus the `.info-box--teal` variant) with `.info-label`, `.tip`, `.season-box`, `.lake-section`/`.lake-rank`/`.lake-meta`, `.phrase-box`/`.phrase-item` (`.phrase-jp`, `.phrase-romaji`, `.phrase-meaning`), and `.group-box`/`.group-item` (`.item-name`, `.item-tag`, `.item-desc`, `.item-image`).
 
 ## Adding or renaming an article touches several files
