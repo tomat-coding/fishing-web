@@ -12,6 +12,8 @@ There is no build system, package manager, JavaScript, linter or test suite. Eve
 
 GitHub Pages builds the site with its default Jekyll step. Any file that belongs only in the repo, like this one, must be listed under `exclude` in `_config.yml`, or it gets published.
 
+`404.html` is served by GitHub Pages for any missing URL, so every link and asset in it uses a root-absolute path (`/styles.css`, `/lake-biwa-fishing.html`). It's `noindex` and isn't in the sitemap.
+
 `google99ec3fbe524bd037.html` is the Google Search Console verification file. Don't edit or remove it.
 
 ## Page structure
@@ -19,7 +21,8 @@ GitHub Pages builds the site with its default Jekyll step. Any file that belongs
 - **`index.html`** is the home page. It has a `.hero`, `.intro`, one `.post-card` per article, a `.deep-dive` summary section and an `.app-note`. Its JSON-LD uses the `WebSite` schema.
 - **Article pages** (`*-japan.html`, `*-fishing.html`, etc.) all use the same skeleton. When adding one, copy an existing article instead of starting from scratch:
   - A `<head>` with `title`, `description`, `canonical`, Open Graph tags (`og:type` = `article`), Twitter card tags, the Google Fonts `<link>`, and a JSON-LD `@graph` containing an `Article` and a `BreadcrumbList`. The `Article` has `datePublished` and `dateModified`, so bump `dateModified` whenever you edit the content. The OG/Twitter images reuse the hero's Unsplash URL at `w=1200`.
-  - The `<title>` targets search queries (`<Keyword-led title> | My Japan Fishing`). The `h1`, `og:title` and card titles can keep the site's voice instead.
+  - The `<title>` targets search queries (`<Keyword-led title> | My Japan Fishing`) and is kept to about 60 characters, since Google truncates anything longer. The meta description is kept to about 155 characters, and the Article JSON-LD `description` matches it. The `h1`, `og:title` and card titles can keep the site's voice instead.
+  - Under the hero subtitle, a `<p class="page-updated">Updated <time datetime="…">…</time></p>` line shows the same date as the JSON-LD `dateModified`. Update both together.
   - `header` (the logo links to `/`), then `.page-hero` with `.back-link`, `h1` and a subtitle. The hero `<img>` has `fetchpriority="high"`. Other images get `loading="lazy"` plus `width`/`height` attributes.
   - `.container > article` holding `.intro`, then a `.toc` whose anchors match the `id`s on each `.content-section`, then the content sections, then `.app-note`, then `.related` ("Keep reading" links to the other articles).
   - The same `footer` on every page.
@@ -45,5 +48,5 @@ There are no templates or includes, so shared content is duplicated by hand:
 ## Content conventions
 
 - The site covers exactly six lakes: Biwa, Kasumigaura, Saroma, Ogawara, Inawashiro and Suwa. The copy is deliberately factual and hedged. For example, solunar/moon-phase theory is presented as a heuristic to check "alongside the weather, not instead of it", not as a guarantee. Keep that tone and don't overclaim.
-- Hero and thumbnail photos are hotlinked from Unsplash with `?auto=format&fit=crop&q=80&w=<size>` (1600 for the home hero, 1400 for article heroes, 400 for card thumbnails, 1200 for social images). Local images go in `images/`.
+- Hero and thumbnail photos are hotlinked from Unsplash with `?auto=format&fit=crop&q=80&w=<size>` (1600 for the home hero, 1400 for article heroes, 400 for card thumbnails, 1200 for social images). Local images go in `images/` as WebP, resized to what's displayed (for example with `cwebp -q 80 -resize`), with their real `width`/`height` in the `<img>`.
 - Escape `&` as `&amp;` in HTML text and attributes.
