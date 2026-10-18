@@ -16,6 +16,10 @@ GitHub Pages builds the site with its default Jekyll step. Any file that belongs
 
 `google99ec3fbe524bd037.html` is the Google Search Console verification file. Don't edit or remove it.
 
+## Project skills
+
+`.claude/skills/` holds the content workflows: `plan-content` (what to write next), `write-article` (a new page end to end), `refresh-page` (re-verify seasonal facts and keep repeated lake facts in sync), `reader-review` (editorial pass from the reader's side) and `site-audit` (consistency checks). `python3 .claude/skills/site-audit/scripts/audit.py .` mechanically checks most rules in this file; run it after editing pages. Jekyll skips dot-folders, so `.claude/` isn't published.
+
 ## Page structure
 
 - **`index.html`** is the home page. It has a `.hero`, `.intro`, one `.post-card` per article, a `.deep-dive` summary section and an `.app-note`. Its JSON-LD uses the `WebSite` schema.
