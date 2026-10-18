@@ -74,6 +74,57 @@ header {
     color: var(--tide-teal);
 }
 
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+/* EN / 日本語 switch in the header */
+.lang-switch {
+    font-family: 'JetBrains Mono', 'Noto Sans JP', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--tide-teal);
+    text-decoration: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 4px 12px;
+    white-space: nowrap;
+}
+
+.lang-switch:hover {
+    background: var(--mist);
+}
+
+/* Japanese pages (/ja/). The Latin display and mono fonts have no Japanese
+   glyphs, so Japanese text uses Noto Sans JP; mono labels keep JetBrains Mono
+   for digits and Latin letters and fall back to Noto Sans JP. */
+body:lang(ja) {
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+    line-height: 1.8;
+    line-break: strict;
+}
+
+:lang(ja) :is(h1, h2, h3, .display, .app-note h3, .lp-stats strong) {
+    font-family: 'Noto Sans JP', "Hiragino Sans", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0;
+    word-break: auto-phrase;
+}
+
+/* Japanese fonts have no italics, and synthetic slanting reads badly. */
+:lang(ja) :is(.tip, em, i) {
+    font-style: normal;
+}
+
+:lang(ja) :is(.mono, .hero-eyebrow, .back-link, .page-updated, .toc, .post-tag, .lake-rank,
+    .lake-meta, .info-label, .item-tag, .app-note-label, .lp-eyebrow, .season-label, .foot-brand) {
+    font-family: 'JetBrains Mono', 'Noto Sans JP', monospace;
+    letter-spacing: 0;
+}
+
 /* Hero — the big homepage banner */
 .hero {
     position: relative;

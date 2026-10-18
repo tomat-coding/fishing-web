@@ -1,6 +1,6 @@
 ---
 name: refresh-page
-description: Bring an existing myjapanfishing.com page up to date for the current or coming season — re-check prices, permits, opening dates, ice and event information against the official sources in its "Sources" box, update the copy, and keep every page that repeats the same lake facts in sync, with dates bumped everywhere. Use this whenever the user says a page is outdated, a season is starting (ice fishing, bass, shijimi, wakasagi), asks to "update", "refresh" or "re-verify" a lake guide or article, or mentions a rule, price or date change at one of the six lakes.
+description: Bring an existing myjapanfishing.com page up to date for the current or coming season — re-check prices, permits, opening dates, ice and event information against the official sources in its "Sources" box, update the copy, and keep every page that repeats the same lake facts in sync, including the Japanese pages in /ja/ — with dates bumped everywhere. Use this whenever the user says a page is outdated, a season is starting (ice fishing, bass, shijimi, wakasagi), asks to "update", "refresh" or "re-verify" a lake guide or article, or mentions a rule, price or date change at one of the six lakes.
 ---
 
 # Refresh a page
@@ -17,8 +17,9 @@ Then find every other place the same fact appears. For a lake that's at least:
 - its section in `lake-fishing-license-japan.html`
 - the `index.html` `.deep-dive` and post card
 - possibly `fishing-lures.html` (lure rules) and `lake-fishing-manners-phrases.html`
+- the Japanese pages in `ja/`, which state the same rules and dates in Japanese (search them by number, e.g. `300円`, `1月中旬`)
 
-`grep -n` for the price or date (e.g. `grep -n '¥300' *.html`) catches the copies you'd otherwise miss.
+`grep -n` for the price or date (e.g. `grep -n '¥300\|300円' *.html ja/*.html`) catches the copies you'd otherwise miss.
 
 ## 2. Re-verify
 
@@ -32,7 +33,7 @@ Show the user a short table: fact, old value, new value, source, and which pages
 
 ## 4. Update everywhere, together
 
-- Change the fact on every page that repeats it, in each page's own wording.
+- Change the fact on every page that repeats it, in each page's own wording and language. Japanese pages follow `.claude/skills/write-article/references/japanese.md` (300円, 1月中旬〜2月下旬, natural phrasing, a 「〇〇年シーズンの情報に更新しました」 line when the change matters).
 - Update year references ("2026 details" → "2027 details") only where the fact really was re-confirmed.
 - Add a new source to the "Sources" box if you used one.
 - On each page whose content changed, bump the Article JSON-LD `dateModified`, the visible `<p class="page-updated">` (`datetime` attribute and the text), and `<lastmod>` in `sitemap.xml`, all to today. If the visible change is meaningful to readers, a short sentence like "Updated for the 2027 season" in the intro or info box tells returning readers what's new.

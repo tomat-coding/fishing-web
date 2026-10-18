@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>釣り予報アプリ『釣れるかな？』 | My Japan Fishing</title>
+    <meta name="description"
+        content="『釣れるかな？』は無料の釣り予報アプリ（Android）。天気・気圧・水温・月齢・潮汐から釣れやすさを毎日スコアにし、時合、全国約240港の潮見表、おすすめルアーまで確認できます。">
+
+    <link rel="canonical" href="https://myjapanfishing.com/ja/japan-fishing-forecast-app.html" />
+    <link rel="alternate" hreflang="en" href="https://myjapanfishing.com/japan-fishing-forecast-app.html" />
+    <link rel="alternate" hreflang="ja" href="https://myjapanfishing.com/ja/japan-fishing-forecast-app.html" />
+    <link rel="alternate" hreflang="x-default" href="https://myjapanfishing.com/japan-fishing-forecast-app.html" />
+
+    <meta property="og:title" content="『釣れるかな？』釣れる日がひと目でわかる" />
+    <meta property="og:description"
+        content="毎日の釣れやすさスコア、時合、全国約240港の潮見表、おすすめルアー。日本の湖と海に対応した無料の釣り予報アプリです。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:url" content="https://myjapanfishing.com/ja/japan-fishing-forecast-app.html" />
+    <meta property="og:image" content="https://myjapanfishing.com/images/app/ja/feature-graphic.jpg" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="500" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="『釣れるかな？』釣れる日がひと目でわかる" />
+    <meta name="twitter:description" content="スコア、時合、潮見表、おすすめルアー。無料の釣り予報アプリ。" />
+    <meta name="twitter:image" content="https://myjapanfishing.com/images/app/ja/feature-graphic.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+    <link rel="stylesheet" href="/styles.css">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "MobileApplication",
+            "name": "釣れるかな？",
+            "alternateName": "TsureruKana",
+            "inLanguage": "ja",
+            "description": "日本の湖と海に対応した釣り予報アプリ。天気・気圧・水温・月齢・潮汐から釣れやすさを毎日スコアにし、時合、全国約240港の潮見表、おすすめルアーを表示します。琵琶湖・霞ヶ浦・サロマ湖・小川原湖・猪苗代湖・諏訪湖と各地の海釣りエリアに対応。",
+            "operatingSystem": "Android",
+            "applicationCategory": "SportsApplication",
+            "url": "https://myjapanfishing.com/ja/japan-fishing-forecast-app.html",
+            "downloadUrl": "https://play.google.com/store/apps/details?id=com.tomat.fishingapp&hl=ja",
+            "image": "https://myjapanfishing.com/images/app/ja/feature-graphic.jpg",
+            "screenshot": [
+              "https://myjapanfishing.com/images/app/ja/screen-dashboard.webp",
+              "https://myjapanfishing.com/images/app/ja/screen-feeding-windows.webp",
+              "https://myjapanfishing.com/images/app/ja/screen-lures.webp",
+              "https://myjapanfishing.com/images/app/ja/screen-tide-table.webp",
+              "https://myjapanfishing.com/images/app/ja/screen-catch-detail.webp"
+            ],
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "JPY"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Tomasz Matusik"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "TsureruKana",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://myjapanfishing.com/logo.png"
+              }
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "inLanguage": "ja",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "『釣れるかな？』は無料ですか？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "はい。Google Playで無料で使えます。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "iPhone版はありますか？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "まだありません。現在はAndroid版のみで、iPhone版は準備中です。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "どの湖・エリアに対応していますか？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "琵琶湖・霞ヶ浦・サロマ湖・小川原湖・猪苗代湖・諏訪湖と、日本各地の海釣りエリアに対応しています。全国約240港の潮見表と、お気に入り登録した釣り場の予報も見られます。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "スコアが高ければ必ず釣れますか？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "いいえ。スコアは天気・気圧・水温・月齢・潮汐などのデータから計算した推定で、いつもよりコンディションが良さそうか悪そうかの目安です。天気予報の代わりではなく、天気とあわせてチェックしてください。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "サロマ湖と小川原湖の潮見表はどのくらい正確ですか？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "潮見表は港のデータです。湖の中の潮は外の港より遅れたり、小さくなったりすることがあるので、時刻は目安として見てください。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "データはどこから来ていますか？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "気象データはOpen-Meteo.com、潮汐の予測は気象庁の潮位表に基づいています。"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "My Japan Fishing",
+                "item": "https://myjapanfishing.com/ja/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "釣り予報アプリ『釣れるかな？』",
+                "item": "https://myjapanfishing.com/ja/japan-fishing-forecast-app.html"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+</head>
+
+<body class="lp-page">
+
+    <header>
+        <div class="container">
+            <a href="/ja/" class="logo">My<span>Japan</span>Fishing</a>
+            <a href="/japan-fishing-forecast-app.html" class="lang-switch" hreflang="en" lang="en">English</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="lp-hero">
+            <div class="lp">
+                <div class="lp-hero-text">
+                    <p class="lp-eyebrow">釣れるかな？ · TsureruKana</p>
+                    <h1>釣れる日が、<em>ひと目でわかる。</em></h1>
+                    <p class="lead">天気・気圧・水温・月齢・潮汐から、日本の湖と海の釣れやすさを毎日スコアにする釣り予報アプリです。時合、潮見表、今日のおすすめルアーまで、出かける前にまとめて確認できます。</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.tomat.fishingapp&amp;hl=ja&amp;referrer=utm_source%3Dmyjapanfishing-ja%26utm_medium%3Dwebsite%26utm_campaign%3Dapp-page"
+                        class="app-badge" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/google-play-badge.png" alt="Google Play で手に入れよう" width="646" height="250">
+                    </a>
+                    <p class="lp-meta">Android版は無料 · iPhone版は準備中</p>
+                </div>
+                <div class="hero-phones">
+                    <div class="phone back">
+                        <img src="/images/app/ja/screen-feeding-windows.webp"
+                            alt="『釣れるかな？』の活性時間帯の画面。琵琶湖のメジャー・マイナーの時合が24時間のタイムラインに並んでいる"
+                            width="600" height="1333" fetchpriority="high">
+                    </div>
+                    <div class="phone front">
+                        <img src="/images/app/ja/screen-dashboard.webp"
+                            alt="『釣れるかな？』のホーム画面。琵琶湖のスコア85「最高」と次の時合、湖のルールが表示されている"
+                            width="600" height="1333" fetchpriority="high">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="lp">
+            <ul class="lp-stats">
+                <li><strong>6つの湖</strong><span>海の釣り場と登録スポットにも対応</span></li>
+                <li><strong>約240港</strong><span>気象庁の潮位表にもとづく潮見表</span></li>
+                <li><strong>0〜100</strong><span>毎日のスコアを数日先まで</span></li>
+                <li><strong>無料</strong><span>Google Playで配信中</span></li>
+            </ul>
+
+            <section class="lp-section">
+                <h2>釣行の計画は3つの画面で</h2>
+                <p class="sub">いつ行くか、いつ投げるか、何を結ぶか。家を出る前に決められます。</p>
+                <div class="ways">
+                    <div class="way">
+                        <div class="way-media">
+                            <div class="phone">
+                                <img src="/images/app/ja/screen-dashboard.webp"
+                                    alt="琵琶湖の今日のスコアと、数日先のスコアが並んだ画面"
+                                    width="600" height="1333" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="way-body">
+                            <h3>🎣 今日の釣れやすさ</h3>
+                            <p>今日のスコアの横に数日先の予報が並ぶので、土曜と日曜のどちらに行くかをひと目で比べられます。</p>
+                        </div>
+                    </div>
+                    <div class="way">
+                        <div class="way-media">
+                            <div class="phone">
+                                <img src="/images/app/ja/screen-feeding-windows.webp"
+                                    alt="メジャー2回とマイナー2回の時合が24時間のタイムラインに表示された画面"
+                                    width="600" height="1333" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="way-body">
+                            <h3>⏰ フィーディングタイム</h3>
+                            <p>魚の活性が高まりやすいと予測される時間帯（メジャー・マイナー）をタイムラインで表示。始まる前にリマインダーで知らせることもできます。</p>
+                        </div>
+                    </div>
+                    <div class="way">
+                        <div class="way-media">
+                            <div class="phone">
+                                <img src="/images/app/ja/screen-lures.webp"
+                                    alt="スマートルアーマッチングの画面。テキサスリグをカラー・リトリーブ・レンジ・サイズと一緒に提案している"
+                                    width="600" height="1333" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="way-body">
+                            <h3>🪝 おすすめルアー</h3>
+                            <p>今日の条件と狙い目の魚に合わせて、カラー・リトリーブ・レンジ・サイズまで提案します。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lp-section">
+                <h2>釣行前に確認したいことを、ひとつのアプリで</h2>
+                <p class="sub">このサイトのガイドで扱っている情報を、毎日の予報と一緒に。</p>
+                <div class="features">
+                    <div class="feature">
+                        <div class="icon" aria-hidden="true">🌊</div>
+                        <h3>潮見表</h3>
+                        <p>気象庁の潮位表にもとづく、全国約240港の満潮・干潮の時刻と潮位。タイドグラフをなぞると好きな時刻の潮位がわかります。</p>
+                    </div>
+                    <div class="feature">
+                        <div class="icon" aria-hidden="true">🐟</div>
+                        <h3>狙い目の魚</h3>
+                        <p>ブラックバスやスモールマウスから真鯛・イカまで、今どの魚の活性が高そうかと、その理由になった環境データを表示します。</p>
+                    </div>
+                    <div class="feature">
+                        <div class="icon" aria-hidden="true">🌡️</div>
+                        <h3>おすすめの水深・岸かボートか</h3>
+                        <p>今の状況に合わせた攻略水深と、岸釣り・ボートそれぞれの期待度を確認できます。</p>
+                    </div>
+                    <div class="feature">
+                        <div class="icon" aria-hidden="true">📋</div>
+                        <h3>釣り場のルール確認</h3>
+                        <p>遊漁券、サイズ制限、リリース禁止の魚種、使える道具などを釣り場ごとに確認できます。琵琶湖のルールは<a href="/ja/lake-biwa-fishing.html#rules">琵琶湖の釣りガイド</a>で詳しく紹介しています。</p>
+                    </div>
+                    <div class="feature">
+                        <div class="icon" aria-hidden="true">⭐</div>
+                        <h3>お気に入りスポット</h3>
+                        <p>よく行く川や堤防を登録すれば、対応湖と同じようにスコア・時合・ルアーの提案までチェックできます。</p>
+                    </div>
+                    <div class="feature">
+                        <div class="icon" aria-hidden="true">☁️</div>
+                        <h3>気象モデルの選択</h3>
+                        <p>予報に使う気象モデルを、自動・ECMWF・ECMWF AI・ICONから設定で選べます。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lp-section">
+                <div class="split">
+                    <div class="phone">
+                        <img src="/images/app/ja/screen-catch-detail.webp"
+                            alt="釣果記録の画面。琵琶湖で釣れた48.5cmのブラックバスと、ルアーやコンディションが記録されている"
+                            width="600" height="1333" loading="lazy">
+                    </div>
+                    <div class="split-text">
+                        <h2>いい日の共通点を、記録から見つける</h2>
+                        <p>釣果を記録すると、そのときのコンディションもアプリが一緒に覚えておきます。</p>
+                        <ul class="checks">
+                            <li><strong>釣果記録：</strong>写真・魚種・サイズ・重さ・ルアー・釣り座をまとめて記録できます。</li>
+                            <li><strong>コンディションを自動保存：</strong>天気や気圧、時間帯も釣果ごとに保存されるので、1シーズン分の記録から自分の「釣れる条件」が見えてきます。</li>
+                            <li><strong>予報をシェア：</strong>今日のスコア・時合・おすすめルアーを画像にして、釣り仲間に送れます。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lp-section">
+                <h2>ホーム画面で予報をチェック</h2>
+                <p class="sub">ウィジェットなら、アプリを開かなくても今日のスコアと次の時合がわかります。</p>
+                <ol class="lp-steps">
+                    <li><strong>インストールして釣り場を選ぶ</strong>Google Playから『釣れるかな？』を入れ、一度開いて湖や釣り場を選びます。</li>
+                    <li><strong>ウィジェットを開く</strong>ホーム画面の空いている場所を長押しして、「ウィジェット」をタップします。</li>
+                    <li><strong>『釣れるかな？』を追加</strong>一覧から探して、ホーム画面にドラッグします。</li>
+                </ol>
+                <p class="lp-steps-note">メニューの名前は機種によって少し違います。</p>
+            </section>
+
+            <section class="lp-section">
+                <h2>よくある質問</h2>
+                <p class="sub">短く、正直にお答えします。</p>
+                <div class="lp-faq">
+                    <details>
+                        <summary>『釣れるかな？』は無料ですか？</summary>
+                        <p>はい。Google Playで無料で使えます。</p>
+                    </details>
+                    <details>
+                        <summary>iPhone版はありますか？</summary>
+                        <p>まだありません。現在はAndroid版のみで、iPhone版は準備中です。それまでは<a href="/ja/lake-biwa-fishing.html">琵琶湖の釣りガイド</a>で、季節ごとの傾向やルールを確認できます。</p>
+                    </details>
+                    <details>
+                        <summary>どの湖・エリアに対応していますか？</summary>
+                        <p>琵琶湖・霞ヶ浦・サロマ湖・小川原湖・猪苗代湖・諏訪湖と、日本各地の海釣りエリアに対応しています。全国約240港の潮見表と、お気に入り登録した釣り場の予報も見られます。</p>
+                    </details>
+                    <details>
+                        <summary>スコアが高ければ必ず釣れますか？</summary>
+                        <p>いいえ。スコアは環境データから計算した推定で、いつもよりコンディションが良さそうか悪そうかの目安です。スコアが低い日に、その年いちばんの一匹が釣れることもあります。淡水の4つの湖には潮の満ち引きがほとんどないため、月齢は特に控えめに見るべき要素です。天気予報の代わりではなく、天気とあわせてチェックしてください。</p>
+                    </details>
+                    <details>
+                        <summary>サロマ湖と小川原湖の潮見表はどのくらい正確ですか？</summary>
+                        <p>潮見表は港のデータです。湖の中の潮は外の港より遅れたり、小さくなったりすることがあるので、時刻は目安として見てください。</p>
+                    </details>
+                    <details>
+                        <summary>データはどこから来ていますか？</summary>
+                        <p>気象データは<a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo.com</a>、潮汐の予測は気象庁の潮位表に基づいています。現在地を使う場合も、その予報のために使うだけで、位置情報をバックグラウンドで追跡し続けることはありません。</p>
+                    </details>
+                    <p class="page-updated">更新日 <time datetime="2026-10-18">2026年10月18日</time></p>
+                </div>
+            </section>
+
+            <div class="lp-cta">
+                <h2>今日は釣れるかな？</h2>
+                <p>タックルボックスを準備する前に、スコアをチェック。</p>
+                <a href="https://play.google.com/store/apps/details?id=com.tomat.fishingapp&amp;hl=ja&amp;referrer=utm_source%3Dmyjapanfishing-ja%26utm_medium%3Dwebsite%26utm_campaign%3Dapp-page"
+                    class="app-badge" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/google-play-badge.png" alt="Google Play で手に入れよう" width="646" height="250">
+                </a>
+                <p class="lp-meta">iPhone版は準備中</p>
+            </div>
+
+            <section class="lp-section">
+                <h2>釣行前に読むガイド</h2>
+                <p class="sub">湖ごとのルールと季節の傾向を、出典付きでまとめています。</p>
+                <ul class="lp-related">
+                    <li><a href="/ja/lake-biwa-fishing.html">琵琶湖</a></li>
+                    <li><a href="/ja/">日本語版トップ</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 My Japan Fishing. 湖を選び、時合を読み、ルールを守って日本の湖を楽しむためのガイドです。</p>
+            <p class="foot-brand">琵琶湖 • 霞ヶ浦 • サロマ湖 • 小川原湖 • 猪苗代湖 • 諏訪湖</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

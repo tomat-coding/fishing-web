@@ -38,6 +38,22 @@ GitHub Pages builds the site with its default Jekyll step. Any file that belongs
 - `.related` ("Keep reading") lists are curated to about five of the most relevant pages. They don't list every article.
 - Reusable content components defined in `styles.css`: `.info-box` (plus the `.info-box--teal` variant) with `.info-label`, `.tip`, `.season-box`, `.lake-section`/`.lake-rank`/`.lake-meta`, `.phrase-box`/`.phrase-item` (`.phrase-jp`, `.phrase-romaji`, `.phrase-meaning`), and `.group-box`/`.group-item` (`.item-name`, `.item-tag`, `.item-desc`, `.item-image`).
 
+## Japanese version (`/ja/`)
+
+The Japanese pages are for local hobby anglers (Lake Biwa first), not tourists. They're reference guides that readers come back to before each trip (rules, seasons, timing, conditions), and they lead on to the app. They're written in Japanese for that reader, not translated, so content that only makes sense for foreigners (phrase boxes, the manners and phrases page, getting a permit without speaking Japanese) is left out. Writing guidance is in `.claude/skills/write-article/references/japanese.md`.
+
+- Files live in `ja/` and keep the English filename when there's an English counterpart (`ja/lake-biwa-fishing.html`). A page may exist in only one language.
+- `<html lang="ja">`, `og:locale` = `ja_JP`, and `"inLanguage": "ja"` on the JSON-LD `Article`. URLs are `https://myjapanfishing.com/ja/<file>`, and `ja/index.html` is `https://myjapanfishing.com/ja/`. Breadcrumb names are in Japanese, and the author and publisher are unchanged.
+- Every link and asset in a `/ja/` page uses a root-absolute path (`/styles.css`, `/images/app/…`, `/ja/lake-biwa-fishing.html`), like `404.html`.
+- **hreflang:** a page with a counterpart has `<link rel="alternate" hreflang="en|ja|x-default" href="…">` in both languages' `<head>`, with `x-default` pointing to the English URL. A page without a counterpart has none.
+- **Language switch:** the header has `<a class="lang-switch">` linking to the counterpart ("日本語" on English pages, "English" on Japanese ones), or to the other language's home page when there's no counterpart.
+- **Fonts:** the Google Fonts `<link>` on `/ja/` pages adds `Noto+Sans+JP:wght@400;500;700`, and `:lang(ja)` rules in `styles.css` switch text to it. Add those rules along with the first `/ja/` page.
+- **Lengths:** the `<title>` (`… | My Japan Fishing`) is about 35 characters, and the meta description about 120, because Google shows fewer Japanese characters.
+- **Google Play links** add `&amp;hl=ja` and use `utm_source%3Dmyjapanfishing-ja` with the usual campaign slugs.
+- **The app** is 『釣れるかな？』 in Japanese copy, with feature names taken from the "Japanese (ja-JP)" section of the app repo's `store/listing.md`. The JSON-LD publisher stays "TsureruKana". App screenshots go in `images/app/ja/`, made from `store/out/ja/` and `store/raw/ja/` with the same `cwebp` settings as the English ones.
+- `/ja/` pages go in `sitemap.xml`, get their own `.post-card` in `ja/index.html` and have their own `.related` lists of Japanese pages.
+- When a fact appears in both languages, change it in both.
+
 ## Adding or renaming an article touches several files
 
 There are no templates or includes, so shared content is duplicated by hand:

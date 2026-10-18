@@ -1,6 +1,6 @@
 ---
 name: reader-review
-description: Review a myjapanfishing.com page the way a real visitor would — a foreign angler planning a trip to a Japanese lake — and suggest concrete edits that make it more useful, more enjoyable to read, and worth bookmarking and coming back to. Use this whenever the user asks to improve, polish, critique or "make better" an article, asks why a page isn't performing or keeping readers, wants more engagement, return visits or time on page, or has just drafted a new article (the write-article skill calls this as its final pass).
+description: Review a myjapanfishing.com page the way its real reader would — a foreign angler planning a trip (English pages) or a local hobby angler checking rules and timing before their next outing (Japanese pages in /ja/) — and suggest concrete edits that make it more useful, more enjoyable to read, and worth bookmarking and coming back to. Use this whenever the user asks to improve, polish, critique or "make better" an article, asks why a page isn't performing or keeping readers, wants more engagement, return visits or time on page, or has just drafted a new article (the write-article skill calls this as its final pass).
 ---
 
 # Reader review
@@ -10,6 +10,8 @@ Search brings people to this site once. Whether they stay, trust it, and come ba
 ## Who the reader is
 
 Mostly an English-speaking angler (resident foreigner or visitor) who has a lake or a trip in mind and limited Japanese. They want to know: *Is this worth it? When should I go? What's biting? What does it cost, what are the rules, how do I get there, and what will catch me out?* Many read on a phone, often with the trip days away. Some are non-anglers (a partner, a family) deciding whether the trip works for them.
+
+For a **Japanese page (`ja/`)** the reader is different: a local hobby angler who knows the basics and fishes the lake regularly. They come to check something before the next trip: this season's rules and dates, which area and depth to try this month, how the wind and water temperature are moving the bite, what's changed. Judge Japanese pages against that reader and against `.claude/skills/write-article/references/japanese.md`. Background and tourist logistics count as filler there; current rules, monthly patterns, a 釣行前チェック and natural, non-translated Japanese count most.
 
 ## Read the page, then score it on these
 
@@ -21,7 +23,7 @@ Read the whole page first, as the reader would. Then go through each point and n
 4. **What will go wrong.** Readers remember the page that warned them: closures, cash-only, reservation needed, lures banned, ice cancelled, last bus times, what wardens confiscate. Each lake page should have at least one honest "check before you go" warning.
 5. **Scannable on a phone.** Short paragraphs, descriptive `h2`/`h3` (not clever ones only), lists for steps and rules, the `.lake-meta` line for numbers, a TOC that matches. Flag walls of text and paragraphs over ~5 lines on mobile.
 6. **Voice.** Factual, warm, plainly hedged; the site never promises fish. Moon phase and the app are a heuristic "alongside the weather, not instead of it". Cut hype, filler intros ("Japan is a beautiful country…"), and anything that sounds like AI boilerplate. Keep lake-local colour (nicknames, history, food) that makes the page enjoyable, as long as it's short and true.
-7. **Reasons to come back.** This is what turns a one-time visit into a bookmark. Look for, or suggest:
+7. **Reasons to come back.** This is what turns a one-time visit into a bookmark, and for Japanese pages it's the whole point of the page. Look for, or suggest:
    - a **season box** (`.season-box`) or month-by-month line the reader returns to as the season changes;
    - a "**check before you go**" list with the official links that change every year;
    - a visible **Updated** date that's recent, plus a sentence on what changed when it matters ("2026 season dates confirmed");

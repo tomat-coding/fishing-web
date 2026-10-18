@@ -1,6 +1,6 @@
 ---
 name: site-audit
-description: Audit myjapanfishing.com for broken consistency between pages — title/description length, canonical and og:url, JSON-LD vs. visible dates, sitemap lastmod, TOC anchors, image attributes, broken local links, Google Play referrers, index cards, "Keep reading" lists and the app page FAQ. Use this whenever the user asks to check, audit, validate, lint or "make sure everything is right" on the site, before they commit or push a batch of edits, after adding/renaming/editing any page, or when Search Console reports indexing or structured-data problems — even if they don't say "audit".
+description: Audit myjapanfishing.com for broken consistency between pages — title/description length, canonical and og:url, JSON-LD vs. visible dates, sitemap lastmod, TOC anchors, image attributes, broken local links, Google Play referrers, index cards, "Keep reading" lists, the app page FAQ, and the Japanese pages in /ja/ (hreflang pairs, language switch, lang/locale, Play hl=ja). Use this whenever the user asks to check, audit, validate, lint or "make sure everything is right" on the site, before they commit or push a batch of edits, after adding/renaming/editing any page, or when Search Console reports indexing or structured-data problems — even if they don't say "audit".
 ---
 
 # Site audit
@@ -26,12 +26,15 @@ What it checks, so you know what it does *not* cover:
 - Google Play links carry the referrer with the right `utm_campaign` slug (`home`, `app-page`, or the filename without `.html`).
 - Articles have an `.app-note` and a `.related` list of about five pages that doesn't link to itself.
 - `&` followed by a space anywhere outside scripts (should be `&amp;`).
-- `index.html` has a `.post-card` for every page; the app page's FAQPage JSON-LD matches the visible `<details>` FAQ.
+- `index.html` and `ja/index.html` each have a `.post-card` for every page in their language; the app page's FAQPage JSON-LD matches the visible `<details>` FAQ.
+- **Japanese pages (`ja/`)**: `lang="ja"`, `og:locale` `ja_JP`, `"inLanguage": "ja"`, Noto Sans JP loaded, root-absolute paths only, home links to `/ja/` not `/`, shorter title (~35) and description (~120) limits, Play links with `hl=ja` and `utm_source=myjapanfishing-ja`, breadcrumbs starting at `/ja/`, and `.related` lists staying in one language.
+- **hreflang pairs**: when `X.html` and `ja/X.html` both exist, both carry `en`, `ja` and `x-default` (English) alternates, and their `.lang-switch` links point at each other. A page with no counterpart has no hreflang and its switch goes to the other language's home page. Once `ja/` exists, every page is expected to have a `.lang-switch`.
 
 ## 2. Look at what the script can't judge
 
 Read the flagged pages, and also check by eye:
-- **Lake facts in sync.** If a lake guide changed, compare its prices, seasons and rules with the hub section in `japans-lakes-for-fishing.html`, the lake's section in `lake-fishing-license-japan.html`, and the `index.html` deep-dive. Contradictions between pages hurt reader trust more than any SEO slip.
+- **Lake facts in sync.** If a lake guide changed, compare its prices, seasons and rules with the hub section in `japans-lakes-for-fishing.html`, the lake's section in `lake-fishing-license-japan.html`, the `index.html` deep-dive, and the same facts in `ja/` (`grep -rn '<price or date>' *.html ja/`). Contradictions between pages, or between the English and Japanese version of a page, hurt reader trust more than any SEO slip.
+- **Japanese copy quality** on `ja/` pages: natural Japanese, the terms and app feature names in `.claude/skills/write-article/references/japanese.md`, and no content meant only for foreign visitors.
 - **Social images** reuse the hero photo at `w=1200`.
 - **Header, footer and `.app-note` wording** match the other pages (CLAUDE.md step 5). A quick `grep -c` of a footer sentence across `*.html` shows strays.
 - **The `.app-note` screenshot fits the topic** (lures → `app-lures.webp`, moon phase → `app-feeding-windows.webp`, tides → `app-tide-table.webp`).
