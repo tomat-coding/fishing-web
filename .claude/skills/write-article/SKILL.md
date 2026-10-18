@@ -40,7 +40,7 @@ Writing guidance:
 - Every page gets a **Sources** `.info-box` linking the official pages used, with a note that dates and fees change.
 - Voice: factual, warm, hedged; never promise fish; moon phase and the app are checked "alongside the weather, not instead of it". Short paragraphs that read well on a phone.
 - The `.app-note` text is specific to the page's topic, uses the matching screenshot from `images/app/app-*.webp`, and the Play link's referrer uses `utm_campaign%3D<filename-without-.html>`.
-- Hero image: a real Unsplash photo that actually shows what the alt text says (open the photo page to confirm). Hotlink with `?auto=format&fit=crop&q=80&w=1400`, and `w=1200` for `og:image`/`twitter:image`. If no fitting photo exists, say so and ask whether to use a stand-in or wait for the user's own photo.
+- Hero image: a real Unsplash photo that actually shows what the alt text says (open the photo page to confirm). Hotlink with `?auto=format&fit=crop&q=80&w=1400`, and `w=1200` for `og:image`/`twitter:image`. Pick a photo no other article uses (only the same article's other-language version may share it). The audit flags repeats. If no fitting photo exists, say so and ask whether to use a stand-in or wait for the user's own photo.
 - Dates: `datePublished` = `dateModified` = today; the visible "Updated" line shows the same date. Escape `&` as `&amp;`.
 
 ## 5. Wire it into the site

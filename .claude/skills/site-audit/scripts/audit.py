@@ -419,6 +419,39 @@ def audit_page(root, rel, sitemap, all_pages):
     return out
 
 
+UNSPLASH_ID = re.compile(r"images\.unsplash\.com/(photo-[0-9a-f-]+)")
+
+
+def photo_reuse(root, all_pages):
+    """Each article gets its own hero photo (its English/Japanese pair may share
+    it), and each home page's cards use distinct thumbnails."""
+    out = []
+    heroes = {}
+    for rel in all_pages:
+        if os.path.basename(rel) == "index.html":
+            continue
+        raw = open(os.path.join(root, rel), encoding="utf-8").read()
+        m = re.search(r'<img[^>]*fetchpriority="high"[^>]*>', raw)
+        pid = m and UNSPLASH_ID.search(m.group(0))
+        if pid:
+            heroes.setdefault(pid.group(1), set()).add(os.path.basename(rel))
+    for pid, names in sorted(heroes.items()):
+        if len(names) > 1:
+            out.append(f"hero photo {pid} is used by different articles: {', '.join(sorted(names))}")
+    for home in ("index.html", "ja/index.html"):
+        if home not in all_pages:
+            continue
+        raw = open(os.path.join(root, home), encoding="utf-8").read()
+        seen = set()
+        for src in re.findall(r'class="post-card">\s*<img src="([^"]+)"', raw):
+            m = UNSPLASH_ID.search(src)
+            key = m.group(1) if m else src.split("?")[0]
+            if key in seen:
+                out.append(f"{home}: two cards use the same thumbnail ({key})")
+            seen.add(key)
+    return out
+
+
 def find_pages(root):
     pages = [f for f in os.listdir(root)
              if f.endswith(".html") and f not in SKIP and not f.startswith("google")]
@@ -443,7 +476,14 @@ def main():
             print(f"sitemap.xml\n  ERROR lists {loc}, but there's no such page\n")
 
     errors = warnings = 0
-    targets = [os.path.relpath(os.path.join(root, f), root) for f in pages_only] or all_pages
+    reuse = photo_reuse(root, all_pages)
+    if reuse:
+        print("images")
+        for msg in reuse:
+            print(f"  ERROR {msg}")
+        print()
+        errors += len(reuse)
+    targets =[os.path.relpath(os.path.join(root, f), root) for f in pages_only] or all_pages
     for rel in targets:
         results = audit_page(root, rel, sitemap, all_pages)
         if not results:

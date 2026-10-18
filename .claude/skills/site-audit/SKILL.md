@@ -26,6 +26,7 @@ What it checks, so you know what it does *not* cover:
 - Google Play links carry the referrer with the right `utm_campaign` slug (`home`, `app-page`, or the filename without `.html`).
 - Articles have an `.app-note` and a `.related` list of about five pages that doesn't link to itself.
 - `&` followed by a space anywhere outside scripts (should be `&amp;`).
+- Every article has its own hero photo (only its English/Japanese counterpart may share it), and the cards on each home page all use different thumbnails.
 - `index.html` and `ja/index.html` each have a `.post-card` for every page in their language; the app page's FAQPage JSON-LD matches the visible `<details>` FAQ.
 - **Japanese pages (`ja/`)**: `lang="ja"`, `og:locale` `ja_JP`, `"inLanguage": "ja"`, Noto Sans JP loaded, root-absolute paths only, home links to `/ja/` not `/`, shorter title (~35) and description (~120) limits, Play links with `hl=ja` and `utm_source=myjapanfishing-ja`, breadcrumbs starting at `/ja/`, and `.related` lists staying in one language.
 - **hreflang pairs**: when `X.html` and `ja/X.html` both exist, both carry `en`, `ja` and `x-default` (English) alternates, and their `.lang-switch` links point at each other. A page with no counterpart has no hreflang and its switch goes to the other language's home page. Once `ja/` exists, every page is expected to have a `.lang-switch`.
