@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Japan Fishing Forecast App: TsureruKana | My Japan Fishing</title>
+    <meta name="description"
+        content="TsureruKana is our free Android fishing forecast app for Japan: a daily bite score, feeding windows, JMA tide tables and lure picks for six lakes.">
+
+    <link rel="canonical" href="https://myjapanfishing.com/japan-fishing-forecast-app.html" />
+
+    <meta property="og:title" content="TsureruKana: Know When the Fish Will Bite" />
+    <meta property="og:description"
+        content="A daily fishing score, feeding windows, tide tables for about 240 ports and lure picks for Japan's lakes and coast." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://myjapanfishing.com/japan-fishing-forecast-app.html" />
+    <meta property="og:image" content="https://myjapanfishing.com/images/app/feature-graphic.jpg" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="500" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TsureruKana: Know When the Fish Will Bite" />
+    <meta name="twitter:description" content="Bite score, feeding windows, tide tables and lure picks for Japan's lakes." />
+    <meta name="twitter:image" content="https://myjapanfishing.com/images/app/feature-graphic.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "MobileApplication",
+            "name": "TsureruKana",
+            "alternateName": "釣れるかな？ – Fishing Japan",
+            "description": "Fishing forecast for Japan: a daily score, solunar feeding windows, tide tables for about 240 ports, weather and lure picks for Lake Biwa, Kasumigaura, Saroma, Ogawara, Inawashiro, Suwa and the coast.",
+            "operatingSystem": "Android",
+            "applicationCategory": "SportsApplication",
+            "url": "https://myjapanfishing.com/japan-fishing-forecast-app.html",
+            "downloadUrl": "https://play.google.com/store/apps/details?id=com.tomat.fishingapp",
+            "image": "https://myjapanfishing.com/images/app/feature-graphic.jpg",
+            "screenshot": [
+              "https://myjapanfishing.com/images/app/screen-dashboard.webp",
+              "https://myjapanfishing.com/images/app/screen-feeding-windows.webp",
+              "https://myjapanfishing.com/images/app/screen-lures.webp",
+              "https://myjapanfishing.com/images/app/screen-tide-table.webp",
+              "https://myjapanfishing.com/images/app/screen-catch-detail.webp",
+              "https://myjapanfishing.com/images/app/screen-widget.webp"
+            ],
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Tomasz Matusik"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "TsureruKana",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://myjapanfishing.com/logo.png"
+              }
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is TsureruKana free?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. TsureruKana is free on Google Play."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is there an iPhone version of TsureruKana?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not yet. TsureruKana is on Android today and an iPhone version is coming soon."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which lakes and areas does TsureruKana cover?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Lake Biwa, Lake Kasumigaura, Lake Saroma, Lake Ogawara, Lake Inawashiro and Lake Suwa, saltwater fishing areas around Japan, tide tables for about 240 ports, and any spot you save yourself."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does a high score guarantee fish?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. The score is an estimate built from weather, pressure, water temperature, the moon and the tide. It tells you whether conditions look better or worse than usual, so check it alongside the weather, not instead of it."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where does the data come from?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Weather data comes from Open-Meteo.com, and tide predictions are based on the Japan Meteorological Agency's tide tables."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "My Japan Fishing",
+                "item": "https://myjapanfishing.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "TsureruKana: Japan Fishing Forecast App",
+                "item": "https://myjapanfishing.com/japan-fishing-forecast-app.html"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+</head>
+
+<body class="lp-page">
+
+    <header>
+        <div class="container">
+            <a href="/" class="logo">My<span>Japan</span>Fishing</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="lp-hero">
+            <div class="lp">
+                <div class="lp-hero-text">
+                    <p class="lp-eyebrow">TsureruKana · 釣れるかな？</p>
+                    <h1>Know when the fish <em>will bite.</em></h1>
+                    <p class="lead">
+                        A daily fishing score for Japan's lakes and coast, built from the weather, pressure, water
+                        temperature, the moon and the tide. Plus feeding windows, tide tables and what to tie on.
+                    </p>
+                    <a href="https://play.google.com/store/apps/details?id=com.tomat.fishingapp&amp;referrer=utm_source%3Dmyjapanfishing%26utm_medium%3Dwebsite%26utm_campaign%3Dapp-page"
+                        class="app-badge" target="_blank" rel="noopener noreferrer">
+                        <img src="images/google-play-badge.png" alt="Get it on Google Play" width="646" height="250">
+                    </a>
+                    <p class="lp-meta">Free on Android · iPhone version coming soon</p>
+                </div>
+                <div class="hero-phones">
+                    <div class="phone back">
+                        <img src="images/app/screen-widget.webp"
+                            alt="Android home screen with the TsureruKana widget: score 85 at Lake Biwa and the next major window"
+                            width="600" height="1333" fetchpriority="high">
+                    </div>
+                    <div class="phone front">
+                        <img src="images/app/screen-dashboard.webp"
+                            alt="TsureruKana home screen: Lake Biwa scores 85, Excellent, with the next bite window and lake rules"
+                            width="600" height="1333" fetchpriority="high">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="lp">
+            <ul class="lp-stats">
+                <li><strong>6 lakes</strong><span>plus the coast and your own spots</span></li>
+                <li><strong>~240 ports</strong><span>JMA tide tables</span></li>
+                <li><strong>0–100</strong><span>daily score, days ahead</span></li>
+                <li><strong>Free</strong><span>on Google Play</span></li>
+            </ul>
+
+            <section class="lp-section">
+                <h2>Plan the trip in three screens</h2>
+                <p class="sub">When to go, when to cast, and what to tie on, before you've left the house.</p>
+                <div class="ways">
+                    <div class="way">
+                        <div class="way-media">
+                            <div class="phone">
+                                <img src="images/app/screen-dashboard.webp"
+                                    alt="TsureruKana daily score for Lake Biwa with the next few days alongside"
+                                    width="600" height="1333" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="way-body">
+                            <h3>🎣 Daily score</h3>
+                            <p>One score for today with the next few days beside it, so you can compare Saturday
+                                with Sunday at a glance.</p>
+                        </div>
+                    </div>
+                    <div class="way">
+                        <div class="way-media">
+                            <div class="phone">
+                                <img src="images/app/screen-feeding-windows.webp"
+                                    alt="TsureruKana feeding windows: two major and two minor periods on a 24-hour timeline"
+                                    width="600" height="1333" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="way-body">
+                            <h3>⏰ Feeding windows</h3>
+                            <p>Solunar major and minor periods on a timeline, with reminders before the next one
+                                starts.</p>
+                        </div>
+                    </div>
+                    <div class="way">
+                        <div class="way-media">
+                            <div class="phone">
+                                <img src="images/app/screen-lures.webp"
+                                    alt="TsureruKana Smart Lure Matching card suggesting a Texas-rigged worm with colour, retrieve and depth"
+                                    width="600" height="1333" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="way-body">
+                            <h3>🪝 Lure picks</h3>
+                            <p>Lures matched to today's conditions and the most active species, with colour,
+                                retrieve, depth and size.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lp-section">
+                <h2>Everything you check before you go</h2>
+                <p class="sub">The same things this site talks about, in one place.</p>
+                <div class="features">
+                    <div class="feature">
+                        <div class="icon" aria-hidden="true">🌊</div>
+                        <h3>Tide tables</h3>
+                        <p>High and low tides from the Japan Meteorological Agency for about 240 ports. Drag the
+                            curve to see the height at any time.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="icon" aria-hidden="true">🐟</div>
+                        <h3>Species activity</h3>
+                        <p>Which fish, from largemouth and smallmouth bass to sea bream and squid, are likely to be
+                            more active, and why.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="icon" aria-hidden="true">🌡️</div>
+                        <h3>Depth, shore or boat</h3>
+                        <p>A suggested depth to start at, and how your chances compare from the shore and from a
+                            boat.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="icon" aria-hidden="true">📋</div>
+                        <h3>Lake rules</h3>
+                        <p>Permits, size limits, no-release species and gear rules for each lake. More in our
+                            <a href="lake-fishing-license-japan.html">lake-by-lake rules guide</a>.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="icon" aria-hidden="true">⭐</div>
+                        <h3>Your own spots</h3>
+                        <p>Save a river bend or a pier and get the same score, windows and lure picks as the
+                            built-in lakes.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="icon" aria-hidden="true">☁️</div>
+                        <h3>Pick your weather model</h3>
+                        <p>Auto, ECMWF, ECMWF AI or ICON. Choose the forecast behind your conditions in
+                            Settings.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lp-section">
+                <div class="split">
+                    <div class="phone">
+                        <img src="images/app/screen-catch-detail.webp"
+                            alt="TsureruKana catch log entry: a 48.5 cm largemouth bass from Lake Biwa with lure and conditions"
+                            width="600" height="1333" loading="lazy">
+                    </div>
+                    <div class="split-text">
+                        <h2>Learn from your best days</h2>
+                        <p>Log each fish, and the app remembers the conditions you caught it in.</p>
+                        <ul class="checks">
+                            <li><strong>Catch log:</strong> photos, species, length, weight, the lure and where you
+                                fished from.</li>
+                            <li><strong>Conditions saved:</strong> weather, pressure and time of day are stored with
+                                every catch, so a season of notes shows what your good days had in common.</li>
+                            <li><strong>Share the forecast:</strong> send today's score, windows and lure pick to
+                                your fishing buddies as an image.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lp-section">
+                <h2>Put the forecast on your home screen</h2>
+                <p class="sub">The widget shows today's score and the next bite window without opening the app.</p>
+                <ol class="lp-steps">
+                    <li><strong>Install and pick a lake</strong> Get TsureruKana from Google Play, open it once and
+                        choose your lake or spot.</li>
+                    <li><strong>Open Widgets</strong> Long-press an empty spot on your home screen and tap
+                        Widgets.</li>
+                    <li><strong>Add TsureruKana</strong> Find it in the list and drag the widget onto your home
+                        screen.</li>
+                </ol>
+                <p class="lp-steps-note">Menu names vary a little between phone makers.</p>
+            </section>
+
+            <section class="lp-section">
+                <h2>Questions</h2>
+                <p class="sub">Short, honest answers.</p>
+                <div class="lp-faq">
+                    <details>
+                        <summary>Is TsureruKana free?</summary>
+                        <p>Yes. It's free on Google Play.</p>
+                    </details>
+                    <details>
+                        <summary>Is there an iPhone version?</summary>
+                        <p>Not yet. TsureruKana is on Android today and an iPhone version is coming soon. Until
+                            then, <a href="japans-lakes-for-fishing.html">our guide to the six lakes</a> covers what
+                            to fish for and when.</p>
+                    </details>
+                    <details>
+                        <summary>Which lakes and areas does it cover?</summary>
+                        <p>Lake Biwa, Kasumigaura, Saroma, Ogawara, Inawashiro and Suwa, saltwater areas around
+                            Japan, tide tables for about 240 ports, and any spot you save yourself.</p>
+                    </details>
+                    <details>
+                        <summary>Does a high score guarantee fish?</summary>
+                        <p>No. The score is an estimate built from environmental data. It tells you whether
+                            conditions look better or worse than usual, and a "poor" day can still give you your
+                            best catch of the year. The moon is the weakest input on the four freshwater lakes, for
+                            the reasons in <a href="moon-phase-fishing-japan.html">how moon phase affects your bite
+                                window</a>. Check it alongside the weather, not instead of it.</p>
+                    </details>
+                    <details>
+                        <summary>How accurate are the tide times for Saroma and Ogawara?</summary>
+                        <p>The tables are for ports. The tide inside a lagoon can run later and smaller than at
+                            the port outside, so treat the times as approximate. More in the
+                            <a href="lake-saroma-fishing.html">Lake Saroma</a> and
+                            <a href="lake-ogawara-fishing.html">Lake Ogawara</a> guides.</p>
+                    </details>
+                    <details>
+                        <summary>Where does the data come from?</summary>
+                        <p>Weather data comes from <a href="https://open-meteo.com/" target="_blank"
+                                rel="noopener noreferrer">Open-Meteo.com</a>, and tide predictions are based on the
+                            Japan Meteorological Agency's tide tables. If you use your current location, the app
+                            uses it for that forecast and doesn't track it in the background.</p>
+                    </details>
+                    <p class="page-updated">Updated <time datetime="2026-10-18">October 18, 2026</time></p>
+                </div>
+            </section>
+
+            <div class="lp-cta">
+                <h2>Will it bite today?</h2>
+                <p>Check the score before you pack the tackle box.</p>
+                <a href="https://play.google.com/store/apps/details?id=com.tomat.fishingapp&amp;referrer=utm_source%3Dmyjapanfishing%26utm_medium%3Dwebsite%26utm_campaign%3Dapp-page"
+                    class="app-badge" target="_blank" rel="noopener noreferrer">
+                    <img src="images/google-play-badge.png" alt="Get it on Google Play" width="646" height="250">
+                </a>
+                <p class="lp-meta">iPhone version coming soon</p>
+            </div>
+
+            <section class="lp-section">
+                <h2>Guides for your trip</h2>
+                <p class="sub">Everything else you need to fish Japan's lakes.</p>
+                <ul class="lp-related">
+                    <li><a href="japans-lakes-for-fishing.html">The six lakes</a></li>
+                    <li><a href="lake-biwa-fishing.html">Lake Biwa</a></li>
+                    <li><a href="lake-kasumigaura-fishing.html">Lake Kasumigaura</a></li>
+                    <li><a href="lake-saroma-fishing.html">Lake Saroma</a></li>
+                    <li><a href="lake-ogawara-fishing.html">Lake Ogawara</a></li>
+                    <li><a href="lake-inawashiro-fishing.html">Lake Inawashiro</a></li>
+                    <li><a href="lake-suwa-wakasagi-fishing.html">Lake Suwa</a></li>
+                    <li><a href="moon-phase-fishing-japan.html">Moon phase</a></li>
+                    <li><a href="fishing-lures.html">Lures</a></li>
+                    <li><a href="lake-fishing-license-japan.html">Rules and permits</a></li>
+                    <li><a href="lake-fishing-manners-phrases.html">Manners and phrases</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 My Japan Fishing. Helping anglers pick a lake, read the moon, and fish Japan's waters the
+                right way.</p>
+            <p class="foot-brand">Biwa • Kasumigaura • Saroma • Ogawara • Inawashiro • Suwa</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
